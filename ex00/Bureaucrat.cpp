@@ -74,6 +74,8 @@ void	Bureaucrat::demotion(int n)
 	std::cout << YELLOW << _name << " has been demoted to grade " << _grade << ". Should work harder !" << DEFAULT << std::endl;
 }
 
+//we have 2 overload of operator << to make it work with either a pointer or 
+// a reference
 std::ostream	&operator<<(std::ostream &o, Bureaucrat *B)
 {
 	o << B->get_name() << ", bureaucrat grade " << B->get_grade() << ".";
