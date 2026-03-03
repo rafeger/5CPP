@@ -40,10 +40,48 @@ Bureaucrat::Bureaucrat(std::string name) : _name(name), _grade(150)
 
 Bureaucrat::Bureaucrat(int grade) : _name("Joe"), _grade(grade)
 {
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	std::cout << GREEN << "Bureaucrat " << _name << ", grade: " << _grade << " has joined the company !" << DEFAULT << std::endl;	
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	std::cout << GREEN << "Bureaucrat " << _name << ", grade: " << _grade << " has joined the company !" << DEFAULT << std::endl;     
+}
+
+
+void	Bureaucrat::promotion(int n)
+{
+	if (_grade - n < 1)
+		throw Bureaucrat::GradeTooHighException();
+	_grade -= n;
+	std::cout << CYAN << _name << " has been promoted to grade " << _grade << ". Congratulations !" << DEFAULT << std::endl;
+}
+
+//increment the grade (should do + but increment sounds positive so idk)
+void	Bureaucrat::demotion(int n)
+{
+	if (_grade + n > 150)
+		throw Bureaucrat::GradeTooLowException();
+	_grade += n;
+	std::cout << YELLOW << _name << " has been demoted to grade " << _grade << ". Should work harder !" << DEFAULT << std::endl;
+}
+
+std::ostream	&operator<<(std::ostream &o, Bureaucrat *B)
+{
+	o << B->get_name() << ", bureaucrat grade " << B->get_grade() << ".";
+	return o;
+}
+
+std::ostream	&operator<<(std::ostream &o, Bureaucrat &B)
+{
+	o << B.get_name() << ", bureaucrat grade " << B.get_grade() << ".";
+	return o;
 }
