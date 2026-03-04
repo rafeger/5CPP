@@ -11,7 +11,10 @@ class Form
 		const	int			_sign_grade;
 		const	int			_exec_grade;
 	public:
-
+		Form();
+		~Form();
+		Form(std::string	_name, bool	_signed, const int _sign_grade, const int _exec_grade);
+		Form(const Form &other);
 
 
 		class GradeTooHighException : public std::exception
