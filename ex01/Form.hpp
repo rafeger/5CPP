@@ -16,6 +16,12 @@ class Form
 		Form(std::string	_name, bool	_signed, const int _sign_grade, const int _exec_grade);
 		Form(const Form &other);
 
+		//getters
+		std::string	get_info();
+
+
+		//setters
+
 
 		class GradeTooHighException : public std::exception
 		{
@@ -34,6 +40,10 @@ class Form
 				}
 		};
 };
+
+std::ostream	&operator<<(std::ostream &o, Form	*form);
+
+std::ostream	&operator<<(std::ostream &o, Form	&form);
 
 
 #endif
