@@ -7,21 +7,23 @@ class Form
 {
 	private:
 		const std::string 	_name;
-		bool				_signed = 0;
+		bool				_sign = 0;
 		const	int			_sign_grade;
 		const	int			_exec_grade;
 	public:
 		Form();
 		~Form();
-		Form(std::string	_name, bool	_signed, const int _sign_grade, const int _exec_grade);
+		Form(std::string	name, const int sign_grade, const int exec_grade);
 		Form(const Form &other);
 
 		//getters
 		std::string	get_info();
 
-
 		//setters
+		//im dumb we cant have setter cuz its all const
 
+		//methods
+		void	beSigned();
 
 		class GradeTooHighException : public std::exception
 		{
@@ -38,6 +40,21 @@ class Form
 				{
 					return "Error: Grade too low !";
 				}
+		};
+
+		class	FormError : public std::exception
+		{
+			private:
+				char *_message;
+			public:
+				const char	*what() const throw()
+				{
+					if (!_message)
+						return ("error: FormError !");
+					return (_message);
+				}
+				FormError(char *str);
+				
 		};
 };
 

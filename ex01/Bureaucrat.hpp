@@ -51,6 +51,8 @@ class Bureaucrat
 					return "Error: Grade too low !";
 				}
 		};
+
+		void	signForm(); 
 };
 
 
