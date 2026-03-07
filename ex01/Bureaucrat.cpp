@@ -87,3 +87,10 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat &B)
 	o << B.get_name() << ", bureaucrat grade " << B.get_grade() << ".";
 	return o;
 }
+
+//ex01
+
+void	Bureaucrat::signForm(Form &form)
+{
+	form.beSigned(*this);
+}

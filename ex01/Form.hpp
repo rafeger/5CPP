@@ -3,11 +3,12 @@
 
 # include "Bureaucrat.hpp"
 
+//we cant do _sign = 0 cuz its a c++11 thing
 class Form
 {
 	private:
 		const std::string 	_name;
-		bool				_sign = 0;
+		bool				_sign;
 		const	int			_sign_grade;
 		const	int			_exec_grade;
 	public:
@@ -23,7 +24,7 @@ class Form
 		//im dumb we cant have setter cuz its all const
 
 		//methods
-		void	beSigned();
+		void	beSigned(Bureaucrat &bureaucrat);
 
 		class GradeTooHighException : public std::exception
 		{
