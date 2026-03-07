@@ -56,8 +56,6 @@ class Form
 					return "Error: Grade too low !";
 				}
 		};
-
-
 		class	FormError : public std::exception
 		{
 			public:

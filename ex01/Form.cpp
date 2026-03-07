@@ -47,7 +47,7 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 		std::cout << "This form is already signed dummy !" << std::endl;
 		return ;
 	}
-	if (bureaucrat.get_grade() < _sign_grade)
+	if (bureaucrat.get_grade() > _sign_grade)
 	{
 		throw GradeTooLowException();
 	}

@@ -21,5 +21,17 @@ int	main()
 	{
 		std::cerr << BOLDRED << e.what() << DEFAULT << std::endl;
 	}
+	try
+	{
+		Bureaucrat	lilbro("neuille", 150);
+		Form		IMPORTANT("IMPORTANT", 5, 5);
+
+		lilbro.signForm(IMPORTANT);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << BOLDRED << e.what() << DEFAULT << std::endl;
+	}
+	
 	return 1;
 }
