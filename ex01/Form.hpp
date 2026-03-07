@@ -29,6 +29,8 @@ class Form
 		Form(std::string	name, const int sign_grade, const int exec_grade);
 		Form(const Form &other);
 
+		Form	&operator=(const Form &other);
+
 		//getters
 		std::string	get_info();
 
@@ -55,25 +57,35 @@ class Form
 				}
 		};
 
+
 		class	FormError : public std::exception
 		{
-			private:
-				char *_message;
 			public:
-				const char	*what() const throw()
+				const char *what() const throw()
 				{
-					if (!_message)
-						return ("error: FormError !");
-					return (_message);
+					return ("error: FormError, name too long !");
 				}
-				FormError(char *str);
-				
-		};
+			};
 };
 
 std::ostream	&operator<<(std::ostream &o, Form	*form);
 
 std::ostream	&operator<<(std::ostream &o, Form	&form);
+
+//tried to do a more avanced error class method and shit but im lowkey buns
+		// class	FormError : public std::exception
+		// {			
+		// 	public:
+		// 		const char	*what() const throw()
+		// 		{
+		// 			if (!_message)
+		// 				return ("error: FormError !");
+		// 			return (_message);
+		// 		}
+		// 		FormError(char *str);
+		// 	private:
+		// 		char *_message;
+		// };
 
 
 #endif

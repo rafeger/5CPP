@@ -12,6 +12,11 @@ Form::~Form()
 	std::cout << BOLDRED << "Form " << _name << " shredded to pieces." << DEFAULT << std::endl;
 }
 
+Form::Form(const Form &other) : _name(other._name), _sign(false), _sign_grade(other._sign_grade), _exec_grade(other._exec_grade)
+{
+	std::cout << GREEN << "The form " << other._name << " has been duplicated." << DEFAULT << std::endl;
+}
+
 //i tried having a copy constructor call another constructor but its only available in c++11
 // Form::Form(const Form &other) : Form(other._name, other._sign_grade, other._exec_grade)
 // {
@@ -26,12 +31,11 @@ Form::~Form()
 
 Form::Form(std::string name, const int sign_grade, const int exec_grade) : _name(name), _sign(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
-	if (name.length() < 50)
+	if (name.length() > 50)
 	{
-		throw FormError("Form Name non-conform to Naming rules !");
+		throw FormError();
 	}
-
-	std::cout << GREEN << "Complete form has been created !" << DEFAULT << std::endl;
+	std::cout << GREEN << "Complete form <" << CYAN << _name << GREEN << "> has been created !" << DEFAULT << std::endl;
 	return ;
 }
 
@@ -83,8 +87,8 @@ std::ostream	&operator<<(std::ostream &o, Form	&form)
 
 //test for advanced error throws
 
-Form::FormError::FormError(char *str)
-{
-	_message = str;
-	return ;
-}
+// Form::FormError::FormError(char *str)
+// {
+// 	_message = str;
+// 	return ;
+// }
