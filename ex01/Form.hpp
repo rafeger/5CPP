@@ -1,7 +1,19 @@
 #ifndef FORM_HPP
 # define FORM_HPP
 
-# include "Bureaucrat.hpp"
+# include <iomanip>
+# include <iostream>
+
+
+
+# define BOLDWHITE "\e[1;37m"
+# define BOLDRED "\e[1;91m"
+# define DEFAULT "\x1b[0m"
+# define GREEN "\e[0;32m"
+# define YELLOW "\e[0;33m"
+# define CYAN 	"\e[0;36m"
+
+class	Bureaucrat;
 
 //we cant do _sign = 0 cuz its a c++11 thing
 class Form
