@@ -1,0 +1,12 @@
+Need to create a base class Aform that stores up various forms.
+Need to execute them through Bureaucrat
+
+
+
+//
+
+Ex03
+
+Intern must be able to FILL an AForm, not create one from scratch.
+
+Gives it data amd specifities

@@ -14,6 +14,10 @@ Form::~Form()
 
 Form::Form(const Form &other) : _name(other._name), _sign(false), _sign_grade(other._sign_grade), _exec_grade(other._exec_grade)
 {
+	if (_sign_grade > 150 || _exec_grade > 150)
+		throw GradeTooLowException();
+	if (_sign_grade < 1 || _exec_grade < 1)
+		throw GradeTooHighException();
 	std::cout << GREEN << "The form " << other._name << " has been duplicated." << DEFAULT << std::endl;
 }
 
@@ -32,9 +36,11 @@ Form::Form(const Form &other) : _name(other._name), _sign(false), _sign_grade(ot
 Form::Form(std::string name, const int sign_grade, const int exec_grade) : _name(name), _sign(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
 	if (name.length() > 50)
-	{
 		throw FormError();
-	}
+	if (_sign_grade > 150 || _exec_grade > 150)
+		throw GradeTooLowException();
+	if (_sign_grade < 1 || _exec_grade < 1)
+		throw GradeTooHighException();
 	std::cout << GREEN << "Complete form <" << CYAN << _name << GREEN << "> has been created !" << DEFAULT << std::endl;
 	return ;
 }
@@ -49,7 +55,8 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 	}
 	if (bureaucrat.get_grade() > _sign_grade)
 	{
-		throw GradeTooLowException();
+		std::cout << bureaucrat.get_name() << " couldnt sign " << _name << " because he is too low elo !" << std::endl;
+		return ;
 	}
 	std::cout << GREEN << bureaucrat.get_name() << " has signed form : " << _name << DEFAULT << std::endl;
 	_sign = true;
