@@ -1,6 +1,6 @@
 NAME     = Bureaucrat
 
-SRC      = main.cpp Bureaucrat.cpp Form.cpp
+SRC      = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardon.cpp RobotomyRequest.cpp ShrubberyCreation.cpp
 OBJ_DIR  = obj
 OBJ      = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 

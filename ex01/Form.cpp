@@ -64,6 +64,13 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 }
 
 
+Form &Form::operator=(const Form &other)
+{
+	//add thingys tf
+	*this = other;
+	return (*this);
+}
+
 // void	Form::beExecuted(Bureaucrat &bureaucrat)
 // {
 
@@ -90,6 +97,8 @@ std::ostream	&operator<<(std::ostream &o, Form	&form)
 	o << form.get_info() << std::endl;
 	return (o);
 }
+
+
 
 
 //test for advanced error throws

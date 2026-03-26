@@ -32,7 +32,7 @@ class AForm
 		AForm	&operator=(const AForm &other);
 
 		//getters
-		std::string	get_info();
+		std::string	get_info() = 0;
 
 		//setters
 		//im dumb we cant have setter cuz its all const

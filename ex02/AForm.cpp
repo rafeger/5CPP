@@ -33,6 +33,13 @@ AForm::AForm(const AForm &other) : _name(other._name), _sign(false), _sign_grade
 //forgetting the safeguard function call beforehand in main or elsewhere we
 //are initializing an instance of AForm
 
+AForm &AForm::operator=(const AForm &other)
+{
+	//add thingys tf
+	*this = other;
+	return (*this);
+}
+
 AForm::AForm(std::string name, const int sign_grade, const int exec_grade) : _name(name), _sign(false), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
 	if (name.length() > 50)
@@ -69,14 +76,16 @@ void	AForm::beSigned(Bureaucrat &bureaucrat)
 
 // }
 
-std::string	AForm::get_info()
-{
-	std::cout << "Name of the form: " << _name << std::endl;
-	std::cout << "Required grade to sign: " << _sign_grade << std::endl;
-	std::cout << "Required grade to exec: " << _exec_grade << std::endl;
-	std::cout << "Status: " << _sign;
-	return "";
-}
+// std::string	AForm::get_info()
+// {
+// 	std::cout << "Name of the form: " << _name << std::endl;
+// 	std::cout << "Required grade to sign: " << _sign_grade << std::endl;
+// 	std::cout << "Required grade to exec: " << _exec_grade << std::endl;
+// 	std::cout << "Status: " << _sign;
+// 	return "";
+// }
+
+
 
 std::ostream	&operator<<(std::ostream &o, AForm	*form)
 {
