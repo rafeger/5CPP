@@ -76,14 +76,14 @@ void	AForm::beSigned(Bureaucrat &bureaucrat)
 
 // }
 
-// std::string	AForm::get_info()
-// {
-// 	std::cout << "Name of the form: " << _name << std::endl;
-// 	std::cout << "Required grade to sign: " << _sign_grade << std::endl;
-// 	std::cout << "Required grade to exec: " << _exec_grade << std::endl;
-// 	std::cout << "Status: " << _sign;
-// 	return "";
-// }
+std::string	AForm::get_info()
+{
+	std::cout << "Name of the form: " << _name << std::endl;
+	std::cout << "Required grade to sign: " << _sign_grade << std::endl;
+	std::cout << "Required grade to exec: " << _exec_grade << std::endl;
+	std::cout << "Status: " << _sign;
+	return "";
+}
 
 
 

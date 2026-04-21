@@ -23,6 +23,7 @@ class AForm
 		bool				_sign;
 		const	int			_sign_grade;
 		const	int			_exec_grade;
+		virtual void		execute(Bureaucrat const &executor) = 0;	
 	public:
 		AForm();
 		~AForm();
@@ -32,10 +33,7 @@ class AForm
 		AForm	&operator=(const AForm &other);
 
 		//getters
-		std::string	get_info() = 0;
-
-		//setters
-		//im dumb we cant have setter cuz its all const
+		std::string	get_info();
 
 		//methods
 		void	beSigned(Bureaucrat &bureaucrat);
@@ -48,6 +46,7 @@ class AForm
 					return "Error: Grade too high !";
 				}
 		};
+		
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -56,6 +55,7 @@ class AForm
 					return "Error: Grade too low !";
 				}
 		};
+
 		class	FormError : public std::exception
 		{
 			public:
@@ -63,7 +63,7 @@ class AForm
 				{
 					return ("error: FormError, name too long !");
 				}
-			};
+		};
 };
 
 std::ostream	&operator<<(std::ostream &o, AForm	*form);

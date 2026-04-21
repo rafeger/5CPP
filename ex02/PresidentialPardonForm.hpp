@@ -5,7 +5,13 @@
 
 class	PresidentialPardon : public AForm
 {
-
+	private:
+		void		execute(Bureaucrat const &executor);
+	public:
+		PresidentialPardon();
+		~PresidentialPardon();
+		PresidentialPardon(const PresidentialPardon &other);
+		
 };
 
 
