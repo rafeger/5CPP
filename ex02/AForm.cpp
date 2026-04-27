@@ -70,6 +70,17 @@ void	AForm::beSigned(Bureaucrat &bureaucrat)
 	return ;
 }
 
+//so basically the execute action deleguates the rest of the call to 
+//the subclass that uses Aform Template basically i think
+void	AForm::execute(Bureaucrat const &bureaucrat) const
+{
+	if (!_sign)
+		throw FormNotSigned();
+	if (bureaucrat.get_grade() > _exec_grade)
+		throw GradeTooLowException();
+	executeAction();
+}
+
 
 // void	AForm::beExecuted(Bureaucrat &bureaucrat)
 // {

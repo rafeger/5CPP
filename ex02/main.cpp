@@ -4,7 +4,7 @@
 
 int	main()
 {
-	PresidentialPardon	P();
+	PresidentialPardon	P;
 	Bureaucrat			Boss("Chad", 1);
 
 	Boss.signForm(P);

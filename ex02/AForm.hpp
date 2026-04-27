@@ -39,8 +39,10 @@ class AForm
 		void	beSigned(Bureaucrat &bureaucrat);	
 		void	execute(Bureaucrat const &executor) const;
 
+		//pure virtual, enables polymorphysm
+		virtual void	executeAction() const = 0;
 
-		//
+		//exceptions
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -65,6 +67,15 @@ class AForm
 				const char *what() const throw()
 				{
 					return ("error: FormError, name too long !");
+				}
+		};
+
+		class 	FormNotSigned : public std::exception
+		{
+			public :
+				const char *what() const throw()
+				{
+					return ("error: FormError, Form isnt signed !");
 				}
 		};
 };
