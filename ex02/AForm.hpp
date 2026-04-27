@@ -23,20 +23,28 @@ class AForm
 		bool				_sign;
 		const	int			_sign_grade;
 		const	int			_exec_grade;
-		virtual void		execute(Bureaucrat const &executor) = 0;	
 	public:
 		AForm();
 		~AForm();
 		AForm(std::string	name, const int sign_grade, const int exec_grade);
 		AForm(const AForm &other);
-
 		AForm	&operator=(const AForm &other);
 
 		//getters
 		std::string	get_info();
+		std::string getName() const;
+		bool		isSigned() const;
+		int			getSignGrade() const;
+		int 		getExecgrade() const;
 
 		//methods
 		void	beSigned(Bureaucrat &bureaucrat);
+		void	execute(Bureaucrat const &executor) const;
+
+
+		//PURE VIRTUAL -> enables polymorphysm
+		virtual void		executeAction(Bureaucrat const &executor) = 0;	
+
 
 		class GradeTooHighException : public std::exception
 		{
@@ -62,6 +70,15 @@ class AForm
 				const char *what() const throw()
 				{
 					return ("error: FormError, name too long !");
+				}
+		};
+
+		class FormNotSigned : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("error: Form not signed !");
 				}
 		};
 };
