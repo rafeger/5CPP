@@ -90,7 +90,7 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat &B)
 
 //ex01
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
-	form.beSigned(*this);
+	AForm.beSigned(*this);
 }

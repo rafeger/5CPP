@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int	main()
 {
