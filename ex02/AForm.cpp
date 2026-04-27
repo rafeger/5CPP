@@ -35,8 +35,8 @@ AForm::AForm(const AForm &other) : _name(other._name), _sign(false), _sign_grade
 
 AForm &AForm::operator=(const AForm &other)
 {
-	//add thingys tf
-	*this = other;
+	if (this != &other)
+		_sign = other._sign;
 	return (*this);
 }
 

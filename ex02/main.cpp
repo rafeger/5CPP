@@ -8,7 +8,7 @@
 //fix signAform
 int	main()
 {
-	AForm *f = new PresidentialPardon("Sarkozy");
+	// AForm *f = new PresidentialPardon("Sarkozy");
 	PresidentialPardon B("Petain");
 	Bureaucrat			Boss("Chad", 1);
 
