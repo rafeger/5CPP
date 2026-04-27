@@ -53,7 +53,7 @@ class Bureaucrat
 				}
 		};
 
-		void	signForm(AForm &form); 
+		void	signAForm(AForm &form); 
 };
 
 

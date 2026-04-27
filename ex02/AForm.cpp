@@ -81,12 +81,6 @@ void	AForm::execute(Bureaucrat const &bureaucrat) const
 	executeAction();
 }
 
-
-// void	AForm::beExecuted(Bureaucrat &bureaucrat)
-// {
-
-// }
-
 std::string	AForm::get_info()
 {
 	std::cout << "Name of the form: " << _name << std::endl;

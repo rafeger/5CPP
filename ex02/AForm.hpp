@@ -36,6 +36,7 @@ class AForm
 		std::string	get_info();
 
 		//methods
+		//basically execute does the checks then calls executeAction
 		void	beSigned(Bureaucrat &bureaucrat);	
 		void	execute(Bureaucrat const &executor) const;
 
@@ -66,7 +67,7 @@ class AForm
 			public:
 				const char *what() const throw()
 				{
-					return ("error: FormError, name too long !");
+					return ("error: FormError");
 				}
 		};
 
