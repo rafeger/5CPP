@@ -63,18 +63,14 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 	return ;
 }
 
-
+//USELESS SINCE BASICALLY ALL FIELDS ARE CONST
 Form &Form::operator=(const Form &other)
 {
-	//add thingys tf
-	*this = other;
+	if (this != &other)
+		_sign = other._sign;
 	return (*this);
 }
 
-// void	Form::beExecuted(Bureaucrat &bureaucrat)
-// {
-
-// }
 
 std::string	Form::get_info()
 {
