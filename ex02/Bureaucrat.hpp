@@ -3,7 +3,7 @@
 
 # include <iomanip>
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # define BOLDWHITE "\e[1;37m"
 # define BOLDRED "\e[1;91m"
@@ -53,7 +53,7 @@ class Bureaucrat
 				}
 		};
 
-		void	signForm(Form &form); 
+		void	signAForm(AForm &form); 
 };
 
 

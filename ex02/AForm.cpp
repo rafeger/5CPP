@@ -35,8 +35,8 @@ AForm::AForm(const AForm &other) : _name(other._name), _sign(false), _sign_grade
 
 AForm &AForm::operator=(const AForm &other)
 {
-	//add thingys tf
-	*this = other;
+	if (this != &other)
+		_sign = other._sign;
 	return (*this);
 }
 
@@ -70,11 +70,16 @@ void	AForm::beSigned(Bureaucrat &bureaucrat)
 	return ;
 }
 
-
-// void	AForm::beExecuted(Bureaucrat &bureaucrat)
-// {
-
-// }
+//so basically the execute action deleguates the rest of the call to 
+//the subclass that uses Aform Template basically i think
+void	AForm::execute(Bureaucrat const &bureaucrat) const
+{
+	if (!_sign)
+		throw FormNotSigned();
+	if (bureaucrat.get_grade() > _exec_grade)
+		throw GradeTooLowException();
+	executeAction();
+}
 
 std::string	AForm::get_info()
 {

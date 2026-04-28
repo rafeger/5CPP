@@ -1,12 +1,17 @@
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
+
+//fix signAform
 int	main()
 {
-	PresidentialPardon	P();
+	// AForm *f = new PresidentialPardon("Sarkozy");
+	PresidentialPardon B("Petain");
 	Bureaucrat			Boss("Chad", 1);
 
-	Boss.signForm(P);
-	P.execute(Boss);
+	Boss.signAForm(B);
+	B.execute(Boss);
 }
