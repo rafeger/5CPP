@@ -78,7 +78,7 @@ void	AForm::execute(Bureaucrat const &bureaucrat) const
 		throw FormNotSigned();
 	if (bureaucrat.get_grade() > _exec_grade)
 		throw GradeTooLowException();
-	executeAction();
+	executeAction(bureaucrat);
 }
 
 std::string	AForm::get_info()

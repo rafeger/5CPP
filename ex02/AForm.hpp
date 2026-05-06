@@ -45,12 +45,7 @@ class AForm
 
 
 		//PURE VIRTUAL -> enables polymorphysm
-		virtual void		executeAction(Bureaucrat const &executor) = 0;	
-
-		void	execute(Bureaucrat const &executor) const;
-
-		//pure virtual, enables polymorphysm
-		virtual void	executeAction() const = 0;
+		virtual void		executeAction(Bureaucrat const &executor) const = 0;	
 
 		//exceptions
 		class GradeTooHighException : public std::exception
@@ -61,7 +56,6 @@ class AForm
 					return "Error: Grade too high !";
 				}
 		};
-		
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -70,7 +64,6 @@ class AForm
 					return "Error: Grade too low !";
 				}
 		};
-
 		class	FormError : public std::exception
 		{
 			public:
@@ -79,16 +72,6 @@ class AForm
 					return ("error: FormError");
 				}
 		};
-
-		class 	FormNotSigned : public std::exception
-		{
-			public :
-				const char *what() const throw()
-				{
-					return ("error: FormError, Form isnt signed !");
-				}
-		};
-
 		class FormNotSigned : public std::exception
 		{
 			public:
