@@ -13,6 +13,7 @@ class	PresidentialPardon : public AForm
 		PresidentialPardon(std::string _target);
 		~PresidentialPardon();
 		PresidentialPardon(const PresidentialPardon &other);
+		PresidentialPardon &operator=(const PresidentialPardon &other);
 		void executeAction(const Bureaucrat &executor) const;
 };
 

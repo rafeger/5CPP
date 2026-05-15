@@ -1,6 +1,5 @@
 NAME     = Bureaucrat
-
-SRC      = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardon.cpp RobotomyRequest.cpp ShrubberyCreation.cpp
+SRC      = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJ_DIR  = obj
 OBJ      = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
@@ -28,3 +27,5 @@ re: fclean all
 -include $(OBJ:.o=.d)
 
 .PHONY: all clean fclean re
+
+# RobotomyRequest.cpp ShrubberyCreation.cpp
