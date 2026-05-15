@@ -8,6 +8,9 @@ class ShrubberyCreation : public AForm
 		std::string _target;
 
 	public :
-		ShrubberyCreation();
+	//canonical form
+		ShrubberyCreation(std::string cible);
 		~ShrubberyCreation();
+		ShrubberyCreation(const ShrubberyCreation &other);
+		ShrubberyCreation &operator=(const ShrubberyCreation &other);
 };

@@ -12,12 +12,13 @@ PresidentialPardon::PresidentialPardon(std::string _name) : _target(_name)
 
 PresidentialPardon::~PresidentialPardon()
 {
-
+	std::cout << YELLOW << "This form : Presidential Pardon with the target : " << _target << " has been deleted ! " << DEFAULT << std::endl;
 }
 
 PresidentialPardon::PresidentialPardon(const PresidentialPardon &other)
 {
-
+	_target = other._target;
+	std::cout << "Presidential Pardon for " << _target << " has been destroyed ! " << std::endl;
 }
 
 void PresidentialPardon::executeAction(const Bureaucrat &executor) const
@@ -29,3 +30,4 @@ void PresidentialPardon::executeAction(const Bureaucrat &executor) const
 	}
 	std::cout << GREEN << _target << " has been pardonned by Zaphod Beeblebrox." << DEFAULT << std::endl;
 }
+
