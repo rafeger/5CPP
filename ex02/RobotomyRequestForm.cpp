@@ -1,6 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string cible) : _target(cible), _result(Trigger())
+//here i can specify in the initializer the precisions of Robotomy such as name exec class init class etc !
+RobotomyRequestForm::RobotomyRequestForm(std::string cible) : AForm("RobotomyRequest", 72, 45), _target(cible), _result(Trigger())
 {
 	std::cout << GREEN << "Robotomy request for " << _target << " created !" << DEFAULT << std::endl;
 }

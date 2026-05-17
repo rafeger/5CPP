@@ -31,12 +31,8 @@ class AForm
 		AForm(const AForm &other);
 		AForm	&operator=(const AForm &other);
 
-		//getters
+		//called get but actually prints lol, could be a void
 		std::string	get_info();
-		std::string getName() const;
-		bool		isSigned() const;
-		int			getSignGrade() const;
-		int 		getExecgrade() const;
 
 		//methods
 		//basically execute does the checks then calls executeAction
