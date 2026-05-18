@@ -32,3 +32,8 @@ void PresidentialPardon::executeAction(const Bureaucrat &executor) const
 	std::cout << CYAN << _target << " has been pardonned by Zaphod Beeblebrox." << DEFAULT << std::endl;
 }
 
+PresidentialPardon &PresidentialPardon::operator=(const PresidentialPardon &other)
+{
+	_target = other._target;
+	return (*this);
+}

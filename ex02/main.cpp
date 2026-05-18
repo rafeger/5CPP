@@ -30,7 +30,9 @@ int	main()
 		B.get_info();
 
 		Boss.signAForm(B);
+		B.get_info();
 		B.execute(Boss);
+		
 
 		PresidentialPardon B2(B);
 		B2.get_info();
